@@ -12,3 +12,19 @@ jobs:
           node-version: '18'
       - name: dependencies
         run: npm install
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: get code
+        uses: actions/checkout@v4
+      - name: install nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: dependencies
+        run: npm install      
+      - name: run build
+        run: npm Brun build
+      - name: DEploy
+        run: echo "Deploying"

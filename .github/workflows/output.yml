@@ -1,0 +1,8 @@
+name: expressions
+on: workflow_dispatch
+jobs:
+  display:
+      runs-on: ubuntu-latest
+      steps:
+        - name: displaygithub
+          run: echo "${{ toJSON(github) }}"

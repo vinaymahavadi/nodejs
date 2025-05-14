@@ -1,9 +1,9 @@
 name: basedonissue
-on: [issues, workflow_dispatch]
+on: [workflow_dispatch]
 jobs:
   displayissue:
     runs-on: ubuntu-latest
     steps:
-      step1:
         - name: echo the ouput
-          run: echo "${{toJSON(github.event)}}"
+          run: echo "${{ toJSON(github.event) }}"
+
